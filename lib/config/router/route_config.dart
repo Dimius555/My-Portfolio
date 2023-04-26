@@ -13,26 +13,54 @@ class AppRouter {
         name: Routes.home,
         path: '/',
         pageBuilder: (context, state) {
-          return MaterialPage(child: HomePage());
+          return CustomTransitionPage(
+              child: HomePage(),
+              transitionsBuilder: (context, animation, secondAnimation, child) {
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+                  child: child,
+                );
+              });
         },
       ),
       GoRoute(
         name: Routes.contactMe,
         path: '/contact_me',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: ContactMePage());
+          return CustomTransitionPage(
+              child: const ContactMePage(),
+              transitionsBuilder: (context, animation, secondAnimation, child) {
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+                  child: child,
+                );
+              });
         },
       ),
       GoRoute(
         name: Routes.projects,
         path: '/projects',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: ProjectsPage());
+          return CustomTransitionPage(
+              child: const ProjectsPage(),
+              transitionsBuilder: (context, animation, secondAnimation, child) {
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+                  child: child,
+                );
+              });
         },
       ),
     ],
     errorPageBuilder: (context, state) {
-      return const MaterialPage(child: ErrorPage());
+      return CustomTransitionPage(
+          child: const ErrorPage(),
+          transitionsBuilder: (context, animation, secondAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          });
     },
   );
 }
