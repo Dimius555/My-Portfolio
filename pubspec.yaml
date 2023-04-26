@@ -13,6 +13,16 @@ dependencies:
   # Navigation package
   go_router: ^6.5.8
 
+  # Data packages
+  shared_preferences: ^2.0.15
+
+  # DI
+  get_it: ^7.2.0
+
+  # State managment packages
+  flutter_bloc: ^8.1.2
+  provider: ^6.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
