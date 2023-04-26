@@ -7,7 +7,7 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Error'),
+      appBar: CustomAppBar(),
       body: Center(
         child: Text("Page you are loking for doesn't exist"),
       ),

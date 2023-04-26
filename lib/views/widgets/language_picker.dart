@@ -44,7 +44,7 @@ class _LanguagePickerState extends State<LanguagePicker> {
             child: const Text('🇺🇸 English'),
           ),
         ],
-        onChanged: (v) async {
+        onChanged: (v) {
           setState(() {
             _selectedValue = v ?? _selectedValue;
           });

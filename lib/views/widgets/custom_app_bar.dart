@@ -10,9 +10,7 @@ import 'package:portfolio/service_locator.dart';
 import 'package:portfolio/views/widgets/language_picker.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title});
-
-  final String title;
+  const CustomAppBar({super.key});
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -76,20 +74,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   await context.setLocale(const Locale('en'));
                   sl<LocalizationNotifier>().setNewLocalization(localization: SupportedLocalizations.en);
                 }
-                // setState(() {});
               },
             ),
-            // TextButton(
-            //     onPressed: () async {
-            // if (sl<LocalizationNotifier>().currentLocalization == SupportedLocalizations.en) {
-            //   await context.setLocale(const Locale('ru'));
-            //   sl<LocalizationNotifier>().setNewLocalization(localization: SupportedLocalizations.ru);
-            // } else {
-            //   await context.setLocale(const Locale('en'));
-            //   sl<LocalizationNotifier>().setNewLocalization(localization: SupportedLocalizations.en);
-            // }
-            //     },
-            //     child: const Text('🇺🇸')),
             IconButton(
               onPressed: () {
                 sl<ThemeNotifier>().switchTheme();

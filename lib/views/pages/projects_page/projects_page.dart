@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:portfolio/views/widgets/custom_app_bar.dart';
 
 class ProjectsPage extends StatelessWidget {
@@ -9,9 +7,7 @@ class ProjectsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(
-        title: 'Projects',
-      ),
+      appBar: CustomAppBar(),
       body: Center(
         child: Text('Projects'),
       ),
