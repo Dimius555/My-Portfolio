@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/config/router/routes.dart';
-import 'package:portfolio/views/pages/contact_me_page/contact_me_page.dart';
+import 'package:portfolio/views/pages/about_page/about_page.dart';
 import 'package:portfolio/views/pages/error_page/error_page.dart';
 import 'package:portfolio/views/pages/home_page/home_page.dart';
 import 'package:portfolio/views/pages/projects_page/projects_page.dart';
@@ -24,11 +24,11 @@ class AppRouter {
         },
       ),
       GoRoute(
-        name: Routes.contactMe,
-        path: '/contact_me',
+        name: Routes.about,
+        path: '/about',
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-              child: const ContactMePage(),
+              child: const AboutPage(),
               transitionsBuilder: (context, animation, secondAnimation, child) {
                 return FadeTransition(
                   opacity: CurveTween(curve: Curves.easeInOut).animate(animation),

@@ -1,16 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:portfolio/config/localization/locale_keys.g.dart';
 import 'package:portfolio/config/localization/localization_notifier.dart';
 import 'package:portfolio/config/localization/localization_storage.dart';
-import 'package:portfolio/config/router/routes.dart';
+import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/config/theme/theme_notifier.dart';
 import 'package:portfolio/service_locator.dart';
+import 'package:portfolio/views/widgets/custom_avatar.dart';
 import 'package:portfolio/views/widgets/language_picker.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.avatarOpacity});
+
+  final double avatarOpacity;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -33,35 +34,48 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.read(context);
     return AppBar(
       automaticallyImplyLeading: false,
       centerTitle: true,
-      title: SizedBox(
-        width: 330,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushNamed(Routes.home);
-              },
-              child: Text(LocaleKeys.home_title.tr()),
-            ),
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushNamed(Routes.projects);
-              },
-              child: Text(LocaleKeys.projects_title.tr()),
-            ),
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushNamed(Routes.contactMe);
-              },
-              child: Text(LocaleKeys.contact_me_title.tr()),
-            ),
-          ],
-        ),
+      leadingWidth: 72,
+      backgroundColor: theme.primaryAppBarColor.withAlpha(64),
+      leading: Padding(
+        padding: const EdgeInsets.only(top: 4.0, left: 20.0),
+        child: AnimatedOpacity(
+            opacity: widget.avatarOpacity,
+            duration: const Duration(milliseconds: 150),
+            child: const CustomAvatar(
+              borderWidth: 1,
+              radius: 22,
+            )),
       ),
+      // title: SizedBox(
+      //   width: 330,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //     children: [
+      //       TextButton(
+      //         onPressed: () {
+      //           GoRouter.of(context).pushNamed(Routes.home);
+      //         },
+      //         child: Text(LocaleKeys.home_title.tr()),
+      //       ),
+      //       TextButton(
+      //         onPressed: () {
+      //           GoRouter.of(context).pushNamed(Routes.projects);
+      //         },
+      //         child: Text(LocaleKeys.projects_title.tr()),
+      //       ),
+      //       TextButton(
+      //         onPressed: () {
+      //           GoRouter.of(context).pushNamed(Routes.about);
+      //         },
+      //         child: Text(LocaleKeys.about_title.tr()),
+      //       ),
+      //     ],
+      //   ),
+      // ),
       actions: [
         Row(
           children: [

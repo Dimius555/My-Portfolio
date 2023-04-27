@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 
 class CustomAvatar extends StatelessWidget {
-  const CustomAvatar({
-    super.key,
-    this.radius = 144,
-  });
+  const CustomAvatar({super.key, this.radius = 144, this.borderWidth = 4});
 
+  final double borderWidth;
   final double radius;
 
   @override
@@ -20,7 +18,7 @@ class CustomAvatar extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(
               color: LightModeColors.primaryBackgroundColor,
-              width: 4,
+              width: borderWidth,
             ),
             borderRadius: const BorderRadius.all(
               Radius.circular(148),

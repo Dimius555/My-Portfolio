@@ -1,6 +1,12 @@
 {
     "home_title": "Home",
-    "projects_title": "Projects",
-    "contact_me_title": "Contact Me",
-    "language_locale": "English"
+    "projects_title": "Projects examples",
+    "about_title": "About me",
+    "language_locale": "English",
+
+    "address_city": "Kharkiv",
+    "address_country": "Ukraine",
+    "address_street": "Academica Proskury st.",
+    "address_building": "2"
+
 }

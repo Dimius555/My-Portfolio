@@ -26,6 +26,10 @@ dependencies:
   # Localization
   easy_localization: ^3.0.1
 
+  # UI packages
+  flutter_svg: ^2.0.5
+  animated_text_kit: ^4.2.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -37,3 +41,10 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: ChakraPetch
+      fonts:
+        - asset: assets/fonts/ChakraPetch-Medium.ttf
+        - asset: assets/fonts/ChakraPetch-Regular.ttf

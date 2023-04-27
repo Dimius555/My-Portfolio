@@ -54,12 +54,13 @@ class AppTheme {
   Color get primaryBackgroundInvertedColor => isDarkTheme ? LightModeColors.primaryBackgroundColor : DarkModeColors.primaryBackgroundColor;
   Color get primaryAppBarColor => isDarkTheme ? DarkModeColors.primaryAppBarColor : LightModeColors.primaryAppBarColor;
   Color get primaryCardBackgroundColor => isDarkTheme ? DarkModeColors.primaryCardBackgroundColor : LightModeColors.primaryCardBackgroundColor;
-
+  Color get footerBackgroundColor => isDarkTheme ? DarkModeColors.footerBackgroundColor : LightModeColors.footerBackgroundColor;
   Color get appAccentColor => isDarkTheme ? DarkModeColors.appAccentColor : LightModeColors.appAccentColor;
   Color get shadowColor => isDarkTheme ? DarkModeColors.shadowColor : LightModeColors.shadowColor;
   Color get accentPositiveColor => isDarkTheme ? DarkModeColors.accentPositiveColor : LightModeColors.accentPositiveColor;
   Color get accentWarningColor => isDarkTheme ? DarkModeColors.accentWarningColor : LightModeColors.accentWarningColor;
   Color get accentNegativeColor => isDarkTheme ? DarkModeColors.accentNegativeColor : LightModeColors.accentNegativeColor;
+  Color get linksColor => isDarkTheme ? DarkModeColors.textLinkColor : LightModeColors.textLinkColor;
 
   TextStyle get header0 => TextStyle(
         fontSize: 32,

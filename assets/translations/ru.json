@@ -1,6 +1,11 @@
 {
     "home_title": "Главная",
-    "projects_title": "Проекты",
-    "contact_me_title": "Контакты",
-    "language_locale": "Русский"
+    "projects_title": "Примеры проектов",
+    "about_title": "Обо мне",
+    "language_locale": "Русский",
+
+    "address_city": "Харьков",
+    "address_country": "Украина",
+    "address_street": "ул. Академика Проскуры",
+    "address_building": "2"
 }
