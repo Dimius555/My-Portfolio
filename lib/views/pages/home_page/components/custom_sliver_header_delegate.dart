@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/localization/locale_keys.g.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/views/widgets/custom_app_bar.dart';
 import 'package:portfolio/views/widgets/custom_avatar.dart';
@@ -21,7 +23,7 @@ class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
               duration: const Duration(milliseconds: 150),
               opacity: progress,
               child: ColoredBox(
-                color: theme.appAccentColor,
+                color: theme.primaryAppBarColor,
               ),
             ),
             AnimatedOpacity(
@@ -42,7 +44,7 @@ class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
               ),
             ),
             CustomAppBar(
-              avatarOpacity: progress,
+              onScrollValue: progress,
             ),
           ],
         ),
@@ -72,15 +74,15 @@ class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TypewriterAnimatedText(
-                      'Flutter Web & Mobile Developer',
+                      LocaleKeys.main_flutter_developer.tr(),
                       speed: const Duration(milliseconds: 50),
                     ),
                     TypewriterAnimatedText(
-                      'iOS Mobile Developer',
+                      LocaleKeys.main_ios_developer.tr(),
                       speed: const Duration(milliseconds: 50),
                     ),
                     TypewriterAnimatedText(
-                      'UI/UX Mobile Designer',
+                      LocaleKeys.main_designer_developer.tr(),
                       speed: const Duration(milliseconds: 50),
                     ),
                   ],

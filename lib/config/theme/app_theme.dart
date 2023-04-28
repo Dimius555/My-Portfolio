@@ -55,7 +55,6 @@ class AppTheme {
   Color get primaryAppBarColor => isDarkTheme ? DarkModeColors.primaryAppBarColor : LightModeColors.primaryAppBarColor;
   Color get primaryCardBackgroundColor => isDarkTheme ? DarkModeColors.primaryCardBackgroundColor : LightModeColors.primaryCardBackgroundColor;
   Color get footerBackgroundColor => isDarkTheme ? DarkModeColors.footerBackgroundColor : LightModeColors.footerBackgroundColor;
-  Color get appAccentColor => isDarkTheme ? DarkModeColors.appAccentColor : LightModeColors.appAccentColor;
   Color get shadowColor => isDarkTheme ? DarkModeColors.shadowColor : LightModeColors.shadowColor;
   Color get accentPositiveColor => isDarkTheme ? DarkModeColors.accentPositiveColor : LightModeColors.accentPositiveColor;
   Color get accentWarningColor => isDarkTheme ? DarkModeColors.accentWarningColor : LightModeColors.accentWarningColor;
@@ -111,13 +110,13 @@ class AppTheme {
       );
 
   TextStyle get button0 => TextStyle(
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: FontWeight.w600,
         color: isDarkTheme ? DarkModeColors.textPrimaryColor : LightModeColors.textPrimaryColor,
       );
 
   TextStyle get button1 => TextStyle(
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
         color: isDarkTheme ? DarkModeColors.textPrimaryColor : LightModeColors.textPrimaryColor,
       );

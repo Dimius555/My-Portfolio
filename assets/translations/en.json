@@ -7,6 +7,16 @@
     "address_city": "Kharkiv",
     "address_country": "Ukraine",
     "address_street": "Academica Proskury st.",
-    "address_building": "2"
+    "address_building": "2",
 
+    "main_flutter_developer": "Flutter Web & Mobile Developer",
+    "main_ios_developer": "iOS Developer",
+    "main_designer_developer": "UI/UX Mobile Designer",
+
+
+    "skill_flutter_description": "Flutter - an open-source mobile application development platform created by Google. With its help, developers can create beautiful and high-performance applications for Android and iOS, using a single codebase in the Dart programming language.",
+    "skill_ios_description": "Swift - a programming language developed by Apple, used to create applications for Apple's platforms such as iOS, macOS, and watchOS. It combines the power of Objective-C with the simplicity of Python, making it easy to learn and use.",
+    "skill_firebase_description": "Firebase - a mobile and web application development platform created by Google. It provides a variety of tools and services for creating applications, including a real-time database, analytics, user authentication, and more.",
+    "skill_figma_description": "Figma - a user interface design tool that allows designers and developers to collaborate on projects in real-time. It offers a wide range of tools for creating layouts, prototypes, and visual components, and also integrates with other design and development tools.",
+    "skill_git_description": "Git - a distributed version control system used to track changes in code and collaborate on projects. It allows developers to save and track changes in source code and merge changes from multiple sources."
 }

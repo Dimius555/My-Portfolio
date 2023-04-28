@@ -8,7 +8,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CustomAppBar(
-        avatarOpacity: 1,
+        onScrollValue: 1,
       ),
       body: Center(
         child: Text('About Me'),

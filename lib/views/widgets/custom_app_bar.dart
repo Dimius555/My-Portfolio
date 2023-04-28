@@ -1,17 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:portfolio/config/localization/locale_keys.g.dart';
 import 'package:portfolio/config/localization/localization_notifier.dart';
 import 'package:portfolio/config/localization/localization_storage.dart';
+import 'package:portfolio/config/router/routes.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/config/theme/theme_notifier.dart';
 import 'package:portfolio/service_locator.dart';
 import 'package:portfolio/views/widgets/custom_avatar.dart';
+import 'package:portfolio/views/widgets/custom_button.dart';
 import 'package:portfolio/views/widgets/language_picker.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.avatarOpacity});
+  const CustomAppBar({super.key, required this.onScrollValue});
 
-  final double avatarOpacity;
+  final double onScrollValue;
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -43,39 +47,46 @@ class _CustomAppBarState extends State<CustomAppBar> {
       leading: Padding(
         padding: const EdgeInsets.only(top: 4.0, left: 20.0),
         child: AnimatedOpacity(
-            opacity: widget.avatarOpacity,
+            opacity: widget.onScrollValue,
             duration: const Duration(milliseconds: 150),
             child: const CustomAvatar(
               borderWidth: 1,
               radius: 22,
             )),
       ),
-      // title: SizedBox(
-      //   width: 330,
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //     children: [
-      //       TextButton(
-      //         onPressed: () {
-      //           GoRouter.of(context).pushNamed(Routes.home);
-      //         },
-      //         child: Text(LocaleKeys.home_title.tr()),
-      //       ),
-      //       TextButton(
-      //         onPressed: () {
-      //           GoRouter.of(context).pushNamed(Routes.projects);
-      //         },
-      //         child: Text(LocaleKeys.projects_title.tr()),
-      //       ),
-      //       TextButton(
-      //         onPressed: () {
-      //           GoRouter.of(context).pushNamed(Routes.about);
-      //         },
-      //         child: Text(LocaleKeys.about_title.tr()),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+      title: AnimatedOpacity(
+        opacity: widget.onScrollValue,
+        duration: const Duration(milliseconds: 20),
+        child: SizedBox(
+          width: 540,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomButton(
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(Routes.home);
+                },
+                title: LocaleKeys.home_title.tr(),
+                type: ButtonType.text,
+              ),
+              CustomButton(
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(Routes.projects);
+                },
+                title: LocaleKeys.projects_title.tr(),
+                type: ButtonType.text,
+              ),
+              CustomButton(
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(Routes.about);
+                },
+                title: LocaleKeys.about_title.tr(),
+                type: ButtonType.text,
+              ),
+            ],
+          ),
+        ),
+      ),
       actions: [
         Row(
           children: [
@@ -94,7 +105,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
               onPressed: () {
                 sl<ThemeNotifier>().switchTheme();
               },
-              icon: isDarkMode ? const Icon(Icons.nightlight_outlined) : const Icon(Icons.sunny),
+              icon: isDarkMode
+                  ? const Icon(
+                      Icons.nightlight_outlined,
+                      color: LightModeColors.primaryBackgroundColor,
+                    )
+                  : const Icon(Icons.sunny, color: LightModeColors.primaryBackgroundColor),
             ),
           ],
         ),

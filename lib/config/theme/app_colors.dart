@@ -3,11 +3,11 @@ part of 'app_theme.dart';
 class LightModeColors {
   static const primaryBackgroundColor = Color.fromARGB(255, 255, 255, 255);
   static const secondaryBackgroundColor = Color.fromARGB(255, 196, 196, 196);
-  static const primaryAppBarColor = Color.fromARGB(255, 240, 240, 240);
+  static const primaryAppBarColor = Color.fromARGB(255, 48, 48, 48);
   static const primaryCardBackgroundColor = Color.fromARGB(255, 238, 238, 238);
   static const footerBackgroundColor = Color(0xFFF5F5F7);
 
-  static const appAccentColor = Color(0xFFF2F6D0);
+  // static const appAccentColor = Color.fromARGB(255, 48, 48, 48);
   static const shadowColor = Color.fromARGB(128, 200, 200, 200);
 
   static const accentPositiveColor = Color.fromARGB(255, 100, 200, 100);
@@ -26,7 +26,7 @@ class DarkModeColors {
   static const primaryCardBackgroundColor = Color.fromARGB(255, 120, 120, 120);
   static const footerBackgroundColor = Color.fromARGB(255, 60, 60, 60);
 
-  static const appAccentColor = Color.fromARGB(255, 107, 103, 89);
+  // static const appAccentColor = Color.fromARGB(255, 107, 103, 89);
   static const shadowColor = Color.fromARGB(128, 190, 190, 190);
 
   static const accentPositiveColor = Color.fromARGB(255, 100, 200, 100);

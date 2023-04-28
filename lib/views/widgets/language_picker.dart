@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/localization/localization_notifier.dart';
 import 'package:portfolio/config/localization/localization_storage.dart';
+import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/service_locator.dart';
 
 class LanguagePicker extends StatefulWidget {
@@ -28,20 +29,29 @@ class _LanguagePickerState extends State<LanguagePicker> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.read(context);
     return DropdownButton(
         focusColor: Colors.transparent,
         isDense: true,
         value: _selectedValue,
+        style: theme.regular3.copyWith(color: LightModeColors.primaryBackgroundColor),
+        dropdownColor: DarkModeColors.primaryBackgroundColor,
         items: [
           DropdownMenuItem(
             value: 'Русский',
             onTap: () {},
-            child: const Text('🇷🇺 Русский'),
+            child: Text(
+              '🇷🇺 Русский',
+              style: theme.regular3.copyWith(color: LightModeColors.primaryBackgroundColor),
+            ),
           ),
           DropdownMenuItem(
             value: 'English',
             onTap: () {},
-            child: const Text('🇺🇸 English'),
+            child: Text(
+              '🇺🇸 English',
+              style: theme.regular3.copyWith(color: LightModeColors.primaryBackgroundColor),
+            ),
           ),
         ],
         onChanged: (v) {
