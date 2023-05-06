@@ -20,13 +20,13 @@ class _BlogComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Last blog posts',
+                    LocaleKeys.last_blog_posts_title.tr(),
                     style: theme.regular1,
                   ),
                   TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Read more',
+                        LocaleKeys.read_more.tr(),
                         style: theme.buttonStyle.copyWith(color: theme.linksColor, fontSize: 14),
                       )),
                 ],

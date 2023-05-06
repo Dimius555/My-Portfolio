@@ -1,5 +1,3 @@
-
-
 part of '../home_page.dart';
 
 class _FooterComponent extends StatelessWidget {
@@ -37,7 +35,7 @@ class _SocialMediaRow extends StatelessWidget {
           height: 32,
           color: theme.primaryBackgroundInvertedColor,
         ),
-        const SizedBox(width: 16),
+        const SizedBox(width: 44),
         InkWell(
           onTap: () {
             window.open(telegramLink, "_blank");
@@ -49,7 +47,7 @@ class _SocialMediaRow extends StatelessWidget {
             color: theme.linksColor,
           ),
         ),
-        const SizedBox(width: 8),
+        const SizedBox(width: 32),
         InkWell(
           onTap: () {
             window.open(githubLink, "_blank");

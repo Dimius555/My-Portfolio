@@ -48,11 +48,12 @@ class _HeaderComponent extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Hi, I am John,\nCreative Technologist',
+                      LocaleKeys.home_title.tr(),
                       style: theme.header0,
                     ),
+                    const SizedBox(height: 32),
                     Text(
-                      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+                      LocaleKeys.home_header_description.tr(),
                       style: theme.regular3,
                     ),
                   ],
@@ -65,7 +66,7 @@ class _HeaderComponent extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(left: size.width * 0.16, bottom: 44.0),
-          child: CustomButton(onPressed: () {}, title: 'Download Resume'),
+          child: CustomButton(onPressed: () {}, title: LocaleKeys.download_resume.tr()),
         ),
       ],
     );

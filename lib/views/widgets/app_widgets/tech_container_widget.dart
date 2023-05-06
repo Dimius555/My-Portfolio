@@ -27,21 +27,21 @@ class TechContainerWidget extends StatelessWidget {
             ),
             color: theme.primaryBackgroundColor),
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Image.asset(icon, width: 48, height: 48),
-              const SizedBox(height: 8),
+              Image.asset(icon, width: 44, height: 44),
+              const SizedBox(height: 12),
               Text(
                 title,
                 style: theme.header2,
                 textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 12),
               Text(
                 description,
                 style: theme.regular4,
                 textAlign: TextAlign.center,
-                // overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

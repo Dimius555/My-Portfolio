@@ -23,13 +23,13 @@ class _WorksComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Featured works',
+                    LocaleKeys.featured_works_title.tr(),
                     style: theme.regular1,
                   ),
                   TextButton(
                       onPressed: () {},
                       child: Text(
-                        'View more',
+                        LocaleKeys.view_more.tr(),
                         style: theme.buttonStyle.copyWith(color: theme.linksColor, fontSize: 14),
                       )),
                 ],

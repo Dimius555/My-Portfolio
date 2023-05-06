@@ -24,15 +24,19 @@ class PostMinimizedWidget extends StatelessWidget {
             'Making a design system from scratch',
             style: theme.header2,
           ),
+          const SizedBox(height: 20),
           Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Design, Pattern', style: theme.regular3.copyWith(color: theme.textSecondaryColor)),
+              const SizedBox(width: 10),
               Text('|', style: theme.regular3),
+              const SizedBox(width: 10),
               Text('12 Feb 2020', style: theme.regular3.copyWith(color: theme.textSecondaryColor)),
             ],
           ),
+          const SizedBox(height: 20),
           Text(
             'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
             style: theme.regular4,
