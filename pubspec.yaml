@@ -44,7 +44,9 @@ flutter:
     - assets/icons/
 
   fonts:
-    - family: ChakraPetch
+    - family: Heebo
       fonts:
-        - asset: assets/fonts/ChakraPetch-Medium.ttf
-        - asset: assets/fonts/ChakraPetch-Regular.ttf
+        - asset: assets/fonts/Heebo-Bold.ttf
+        - asset: assets/fonts/Heebo-Medium.ttf
+        - asset: assets/fonts/Heebo-Regular.ttf
+        

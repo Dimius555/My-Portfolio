@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/views/widgets/custom_app_bar.dart';
+import 'package:portfolio/views/widgets/custom/custom_app_bar.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});

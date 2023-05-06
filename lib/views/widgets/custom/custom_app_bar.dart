@@ -1,16 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:portfolio/config/localization/locale_keys.g.dart';
 import 'package:portfolio/config/localization/localization_notifier.dart';
 import 'package:portfolio/config/localization/localization_storage.dart';
-import 'package:portfolio/config/router/routes.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/config/theme/theme_notifier.dart';
 import 'package:portfolio/service_locator.dart';
-import 'package:portfolio/views/widgets/custom_avatar.dart';
-import 'package:portfolio/views/widgets/custom_button.dart';
+
 import 'package:portfolio/views/widgets/language_picker.dart';
+
+import 'custom_avatar.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, required this.onScrollValue});
@@ -61,28 +59,28 @@ class _CustomAppBarState extends State<CustomAppBar> {
           width: 540,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomButton(
-                onPressed: () {
-                  GoRouter.of(context).pushNamed(Routes.home);
-                },
-                title: LocaleKeys.home_title.tr(),
-                type: ButtonType.text,
-              ),
-              CustomButton(
-                onPressed: () {
-                  GoRouter.of(context).pushNamed(Routes.projects);
-                },
-                title: LocaleKeys.projects_title.tr(),
-                type: ButtonType.text,
-              ),
-              CustomButton(
-                onPressed: () {
-                  GoRouter.of(context).pushNamed(Routes.about);
-                },
-                title: LocaleKeys.about_title.tr(),
-                type: ButtonType.text,
-              ),
+            children: const [
+              // CustomButton(
+              //   onPressed: () {
+              //     GoRouter.of(context).pushNamed(Routes.home);
+              //   },
+              //   title: LocaleKeys.home_title.tr(),
+              //   type: ButtonType.text,
+              // ),
+              // CustomButton(
+              //   onPressed: () {
+              //     GoRouter.of(context).pushNamed(Routes.projects);
+              //   },
+              //   title: LocaleKeys.projects_title.tr(),
+              //   type: ButtonType.text,
+              // ),
+              // CustomButton(
+              //   onPressed: () {
+              //     GoRouter.of(context).pushNamed(Routes.about);
+              //   },
+              //   title: LocaleKeys.about_title.tr(),
+              //   type: ButtonType.text,
+              // ),
             ],
           ),
         ),

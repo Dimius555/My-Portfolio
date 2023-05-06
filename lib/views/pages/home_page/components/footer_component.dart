@@ -1,14 +1,9 @@
-import 'dart:html';
 
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/config/constants/links.dart';
-import 'package:portfolio/config/localization/locale_keys.g.dart';
-import 'package:portfolio/config/theme/app_theme.dart';
 
-class CustomFooterBar extends StatelessWidget {
-  const CustomFooterBar({super.key});
+part of '../home_page.dart';
+
+class _FooterComponent extends StatelessWidget {
+  const _FooterComponent();
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +11,10 @@ class CustomFooterBar extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 82,
-      decoration: BoxDecoration(color: theme.footerBackgroundColor),
+      decoration: BoxDecoration(color: theme.primaryBackgroundColor),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: const [
-          _Address(),
           _SocialMediaRow(),
         ],
       ),
@@ -69,32 +63,6 @@ class _SocialMediaRow extends StatelessWidget {
         ),
         const SizedBox(width: 16),
       ],
-    );
-  }
-}
-
-class _Address extends StatelessWidget {
-  const _Address();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = AppTheme.read(context);
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            '${LocaleKeys.address_country.tr()}, ${LocaleKeys.address_city.tr()}',
-            style: theme.regular3,
-          ),
-          Text(
-            '${LocaleKeys.address_street.tr()} ${LocaleKeys.address_building.tr()}',
-            style: theme.regular3,
-          ),
-        ],
-      ),
     );
   }
 }

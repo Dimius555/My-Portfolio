@@ -4,7 +4,6 @@ import 'package:portfolio/config/router/routes.dart';
 import 'package:portfolio/views/pages/about_page/about_page.dart';
 import 'package:portfolio/views/pages/error_page/error_page.dart';
 import 'package:portfolio/views/pages/home_page/home_page.dart';
-import 'package:portfolio/views/pages/projects_page/projects_page.dart';
 
 class AppRouter {
   final GoRouter router = GoRouter(
@@ -37,20 +36,20 @@ class AppRouter {
               });
         },
       ),
-      GoRoute(
-        name: Routes.projects,
-        path: '/projects',
-        pageBuilder: (context, state) {
-          return CustomTransitionPage(
-              child: const ProjectsPage(),
-              transitionsBuilder: (context, animation, secondAnimation, child) {
-                return FadeTransition(
-                  opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
-                  child: child,
-                );
-              });
-        },
-      ),
+      // GoRoute(
+      //   name: Routes.projects,
+      //   path: '/projects',
+      //   pageBuilder: (context, state) {
+      //     return CustomTransitionPage(
+      //         child: const ProjectsPage(),
+      //         transitionsBuilder: (context, animation, secondAnimation, child) {
+      //           return FadeTransition(
+      //             opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+      //             child: child,
+      //           );
+      //         });
+      //   },
+      // ),
     ],
     errorPageBuilder: (context, state) {
       return CustomTransitionPage(

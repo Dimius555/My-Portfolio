@@ -1,10 +1,23 @@
+import 'dart:html';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/localization/locale_keys.g.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 import 'package:portfolio/config/theme/theme_notifier.dart';
 import 'package:portfolio/service_locator.dart';
-import 'package:portfolio/views/pages/home_page/components/tech_pull_widget.dart';
-import 'package:portfolio/views/widgets/custom_footer_bar.dart';
-import 'package:portfolio/views/pages/home_page/components/custom_sliver_header_delegate.dart';
+import 'package:portfolio/views/widgets/app_widgets/post_minimized_widget.dart';
+import 'package:portfolio/views/widgets/app_widgets/project_minimized_widget.dart';
+import 'package:portfolio/views/widgets/app_widgets/tech_container_widget.dart';
+import 'package:portfolio/views/widgets/custom/custom_avatar.dart';
+import 'package:portfolio/views/widgets/custom/custom_button.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:portfolio/config/constants/links.dart';
+
+part 'components/header_component.dart';
+part 'components/skills_component.dart';
+part 'components/works_component.dart';
+part 'components/blog_component.dart';
+part 'components/footer_component.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key}) {
@@ -16,53 +29,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int _itemsCount = 2;
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.read(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: const CustomAppBar(),
-
-      body: CustomScrollView(slivers: [
-        const SliverPersistentHeader(
-          pinned: true,
-          delegate: CustomSliverHeaderDelegate(),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            childCount: _itemsCount,
-            (context, index) {
-              if (index == _itemsCount - 1) {
-                return _getWidget(index, size);
-              }
-              return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0.12 * size.width),
-                child: _getWidget(index, size),
-              );
-
-              // return Padding(
-              //     padding: const EdgeInsets.all(20.0),
-              //     child: Text(
-              //       "Pull of technologies",
-              //       style: theme.header0,
-              //     ));
-            },
-          ),
-        )
-      ]),
-    );
-  }
-
-  Widget _getWidget(int index, Size size) {
-    if (index == 0) {
-      return TechPullWidget(
-        screenSize: size,
-      );
-    }
-    if (index == 1) {
-      return const CustomFooterBar();
-    }
-    return Container();
+        body: SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          _HeaderComponent(),
+          _SkillsComponent(),
+          _WorksComponent(),
+          _BlogComponent(),
+          _FooterComponent(),
+        ],
+      ),
+    ));
   }
 }
