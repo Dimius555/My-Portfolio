@@ -19,9 +19,20 @@ class _WorksComponent extends StatelessWidget {
           if (index == 0) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 24.0),
-              child: Text(
-                'Featured works',
-                style: theme.regular1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Featured works',
+                    style: theme.regular1,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'View more',
+                        style: theme.buttonStyle.copyWith(color: theme.linksColor, fontSize: 14),
+                      )),
+                ],
               ),
             );
           }
