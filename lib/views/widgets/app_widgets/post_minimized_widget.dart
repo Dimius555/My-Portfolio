@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/constants/app_constants.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
 
 class PostMinimizedWidget extends StatelessWidget {
@@ -9,7 +10,7 @@ class PostMinimizedWidget extends StatelessWidget {
     final theme = AppTheme.read(context);
     final size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.3,
+      width: size.width > AppConstants.mobileModeBorderWidth ? size.width * 0.3 : null,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
           color: theme.secondaryBackgroundColor,

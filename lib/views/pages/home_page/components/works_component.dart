@@ -10,7 +10,9 @@ class _WorksComponent extends StatelessWidget {
     final theme = AppTheme.read(context);
     final size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(left: size.width * 0.16, right: size.width * 0.16, top: 16.0),
+      padding: size.width > AppConstants.mobileModeBorderWidth
+          ? EdgeInsets.only(left: size.width * 0.16, right: size.width * 0.16, top: 16.0)
+          : EdgeInsets.only(left: size.width * 0.1, right: size.width * 0.1, top: 16.0),
       child: ListView.builder(
         itemCount: _itemsCount,
         shrinkWrap: true,

@@ -7,9 +7,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(
-        onScrollValue: 1,
-      ),
+      appBar: CustomAppBar(),
       body: Center(
         child: Text('About Me'),
       ),

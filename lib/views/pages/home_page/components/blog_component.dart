@@ -10,7 +10,9 @@ class _BlogComponent extends StatelessWidget {
     final theme = AppTheme.read(context);
     final size = MediaQuery.of(context).size;
     return Padding(
-        padding: EdgeInsets.only(left: size.width * 0.16, right: size.width * 0.16, bottom: 24.0),
+        padding: size.width > AppConstants.mobileModeBorderWidth
+            ? EdgeInsets.only(left: size.width * 0.16, right: size.width * 0.16, bottom: 24.0)
+            : EdgeInsets.only(left: size.width * 0.1, right: size.width * 0.1, bottom: 24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,13 +34,21 @@ class _BlogComponent extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                PostMinimizedWidget(),
-                PostMinimizedWidget(),
-              ],
-            ),
+            size.width > AppConstants.mobileModeBorderWidth
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      PostMinimizedWidget(),
+                      PostMinimizedWidget(),
+                    ],
+                  )
+                : Column(
+                    children: const [
+                      PostMinimizedWidget(),
+                      SizedBox(height: 20),
+                      PostMinimizedWidget(),
+                    ],
+                  ),
           ],
         ));
   }

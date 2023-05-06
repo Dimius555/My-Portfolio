@@ -12,7 +12,7 @@ class LightModeComponents {
   static TextButtonThemeData textButtonThemeData() => TextButtonThemeData(
           style: TextButton.styleFrom(
         foregroundColor: LightModeColors.appSecondaryColor,
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(0),
       ));
 
   static AppBarTheme appBarTheme() => const AppBarTheme(
