@@ -9,10 +9,10 @@ class _SkillsComponent extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
         color: theme.primaryBackgroundColor,
-        child: size.width > AppConstants.mobileModeBorderWidth ? _webOrientation(theme, size) : _mobileOrientation(theme, size));
+        child: size.width > AppConstants.mobileModeBorderWidth ? _webOrientation(theme, size, context) : _mobileOrientation(theme, size, context));
   }
 
-  Widget _webOrientation(AppTheme theme, Size size) {
+  Widget _webOrientation(AppTheme theme, Size size, BuildContext context) {
     return Column(
       children: [
         Padding(
@@ -25,7 +25,9 @@ class _SkillsComponent extends StatelessWidget {
                 style: theme.regular1,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(Routes.skills);
+                  },
                   child: Text(
                     LocaleKeys.view_more.tr(),
                     style: theme.buttonStyle.copyWith(color: theme.linksColor, fontSize: 14),
@@ -64,7 +66,7 @@ class _SkillsComponent extends StatelessWidget {
     );
   }
 
-  Widget _mobileOrientation(AppTheme theme, Size size) {
+  Widget _mobileOrientation(AppTheme theme, Size size, BuildContext context) {
     return Column(
       children: [
         Padding(
@@ -77,7 +79,9 @@ class _SkillsComponent extends StatelessWidget {
                 style: theme.regular1,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(Routes.skills);
+                  },
                   style: TextButton.styleFrom(padding: EdgeInsets.zero),
                   child: Text(
                     LocaleKeys.view_more.tr(),

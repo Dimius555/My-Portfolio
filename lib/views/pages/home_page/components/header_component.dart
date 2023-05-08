@@ -10,7 +10,9 @@ class _HeaderComponent extends StatelessWidget {
     return Column(
       crossAxisAlignment: size.width > AppConstants.mobileModeBorderWidth ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       children: [
-        const CustomAppBar(),
+        const CustomAppBar(
+          showHomeButton: false,
+        ),
         size.width > AppConstants.mobileModeBorderWidth
             ? Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.16, vertical: 44.0),

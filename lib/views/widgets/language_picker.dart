@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/config/localization/localization_notifier.dart';
 import 'package:portfolio/config/localization/localization_storage.dart';
 import 'package:portfolio/config/theme/app_theme.dart';
-import 'package:portfolio/service_locator.dart';
+import 'package:portfolio/config/app_setup/service_locator.dart';
 
 class LanguagePicker extends StatefulWidget {
   const LanguagePicker({super.key, required this.onChanged});

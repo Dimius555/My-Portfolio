@@ -10,6 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Firebase
+  firebase_core: ^2.11.0
+  firebase_auth: ^4.5.0
+  cloud_firestore: ^4.6.0
+  firebase_storage: ^11.1.2
+
   # Navigation package
   go_router: ^6.5.8
 
@@ -29,6 +35,9 @@ dependencies:
   # UI packages
   flutter_svg: ^2.0.5
   animated_text_kit: ^4.2.2
+
+  # Encryption
+  crypto: ^3.0.2
 
 dev_dependencies:
   flutter_test:

@@ -5,7 +5,7 @@ class LightModeComponents {
         style: ElevatedButton.styleFrom(
             backgroundColor: LightModeColors.appPrimaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(2),
+              borderRadius: BorderRadius.circular(8),
             )),
       );
 
@@ -25,6 +25,33 @@ class LightModeComponents {
       backgroundColor: LightModeColors.primaryBackgroundColor,
       elevation: 0,
       surfaceTintColor: Colors.transparent);
+
+  static InputDecorationTheme textFieldTheme() => const InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: LightModeColors.secondaryBackgroundColor),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: LightModeColors.appSecondaryColor),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: LightModeColors.accentNegativeColor),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: LightModeColors.appSecondaryColor),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+      );
 }
 
 class DarkModeComponents {

@@ -4,10 +4,11 @@ import 'package:portfolio/config/theme/app_theme.dart';
 enum ButtonType { primary, text }
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.title});
+  const CustomButton({super.key, required this.onPressed, required this.title, this.customColor});
 
   final Function onPressed;
   final String title;
+  final Color? customColor;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-            backgroundColor: LightModeColors.appPrimaryColor,
+            backgroundColor: customColor ?? LightModeColors.appPrimaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(2),
+              borderRadius: BorderRadius.circular(8),
             )),
         onPressed: () {
           onPressed.call();
