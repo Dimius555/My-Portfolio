@@ -1,5 +1,5 @@
 class SkillModel {
-  late int id;
+  late String id;
   late String name;
   late double level;
   late String? info;

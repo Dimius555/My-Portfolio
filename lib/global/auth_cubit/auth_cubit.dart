@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/interfaces/auth_repository.dart';
+import 'package:portfolio/interfaces/repositories/auth_repository.dart';
 
 part 'auth_state.dart';
 

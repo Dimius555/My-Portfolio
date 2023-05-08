@@ -19,12 +19,12 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
     final theme = AppTheme.read(context);
 
     return AppBar(
-      backgroundColor: theme.secondaryBackgroundColor,
+      backgroundColor: theme.linksColor,
       automaticallyImplyLeading: false,
       centerTitle: true,
       title: Text(
         'Admin pannel',
-        style: theme.header2,
+        style: theme.header2.copyWith(color: theme.primaryBackgroundColor),
       ),
       actions: [
         Padding(
@@ -36,7 +36,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               icon: Icon(
                 Icons.logout,
-                color: theme.textPrimaryColor,
+                color: theme.primaryBackgroundColor,
               )),
         )
       ],

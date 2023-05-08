@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
     this.errorMessage,
     this.onChanged,
     this.isSecured = false,
+    this.maxLines = 1,
   });
 
   final String label;
@@ -16,19 +17,24 @@ class CustomTextField extends StatelessWidget {
   final Function(String)? onChanged;
   final TextEditingController controller;
   final bool isSecured;
+  final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.read(context);
-    return TextField(
-      cursorColor: theme.textPrimaryColor,
-      controller: controller,
-      onChanged: onChanged,
-      obscureText: isSecured,
-      decoration: InputDecoration(
-        floatingLabelStyle: TextStyle(color: theme.appSecondaryColor),
-        labelText: label,
-        errorText: errorMessage,
+    return Material(
+      color: theme.primaryBackgroundColor,
+      child: TextField(
+        maxLines: maxLines,
+        cursorColor: theme.textPrimaryColor,
+        controller: controller,
+        onChanged: onChanged,
+        obscureText: isSecured,
+        decoration: InputDecoration(
+          floatingLabelStyle: TextStyle(color: theme.appSecondaryColor),
+          labelText: label,
+          errorText: errorMessage,
+        ),
       ),
     );
   }

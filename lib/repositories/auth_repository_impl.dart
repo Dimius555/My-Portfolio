@@ -1,10 +1,10 @@
-import 'package:portfolio/interfaces/auth_api.dart';
-import 'package:portfolio/interfaces/auth_repository.dart';
+import 'package:portfolio/data/api/auth_api.dart';
+import 'package:portfolio/interfaces/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl({required AuthApi authApi}) : _api = authApi;
+  AuthRepositoryImpl({required AuthAPI authApi}) : _api = authApi;
 
-  final AuthApi _api;
+  final AuthAPI _api;
 
   @override
   bool checkAuthorization() {

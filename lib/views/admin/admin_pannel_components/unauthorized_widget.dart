@@ -42,19 +42,18 @@ class _UnauthorizedWidgetState extends State<UnauthorizedWidget> {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 44),
-        Material(
-          child: SizedBox(
-            width: 240,
-            child: CustomTextField(
-              controller: _keyController,
-              label: 'Admin Key',
-              errorMessage: _errorText,
-              onChanged: (str) {
-                setState(() {
-                  _errorText = null;
-                });
-              },
-            ),
+        SizedBox(
+          width: 240,
+          child: CustomTextField(
+            isSecured: true,
+            controller: _keyController,
+            label: 'Admin Key',
+            errorMessage: _errorText,
+            onChanged: (str) {
+              setState(() {
+                _errorText = null;
+              });
+            },
           ),
         ),
         const SizedBox(height: 44),

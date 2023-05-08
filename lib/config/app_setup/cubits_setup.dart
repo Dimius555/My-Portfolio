@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/config/app_setup/main_app.dart';
 import 'package:portfolio/config/app_setup/service_locator.dart';
 import 'package:portfolio/global/auth_cubit/auth_cubit.dart';
+import 'package:portfolio/global/skills_cubit/skills_cubit.dart';
 
 class CubitsSetup extends StatelessWidget {
   const CubitsSetup({super.key});
@@ -15,6 +16,12 @@ class CubitsSetup extends StatelessWidget {
           lazy: false,
           create: (_) => AuthCubit(
             authRepository: sl(),
+          ),
+        ),
+        BlocProvider(
+          lazy: false,
+          create: (_) => SkillsCubit(
+            skillRepository: sl(),
           ),
         )
       ],
