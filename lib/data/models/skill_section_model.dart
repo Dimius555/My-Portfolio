@@ -16,14 +16,24 @@ class SkillSectionModel {
     required this.skills,
   });
 
+  SkillSectionModel copyWith({String? name, String? tooltip, List<SkillModel>? skills}) {
+    return SkillSectionModel(
+      id: id,
+      name: name ?? this.name,
+      tooltip: tooltip ?? this.tooltip,
+      type: type,
+      skills: skills ?? this.skills,
+    );
+  }
+
   static SkillSectionModel fromJson(Map<String, dynamic> json) {
     return SkillSectionModel(
       id: json['id'],
       name: json['name'],
       tooltip: json['tooltip'],
       type: SkillSectionType.fromJson(json['type']),
-      skills: (json['skills'] != null && json['skills'] is List<Map<String, dynamic>>)
-          ? (json['skills'] as List<Map<String, dynamic>>).map((e) => SkillModel.fromJson(e)).toList()
+      skills: (json['skills'] != null && json['skills'] is List)
+          ? (json['skills'] as List<dynamic>).map((e) => SkillModel.fromJson(e as Map<String, dynamic>)).toList()
           : [],
     );
   }

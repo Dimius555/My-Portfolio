@@ -21,4 +21,9 @@ class SkillRepositoryImpl implements SkillRepository {
   Future<SkillSectionModel> fetchSkillSectionById(String id) {
     return _api.fetchSkillSectionById(id);
   }
+
+  @override
+  Future<void> removeSection(String id) {
+    return _api.removeSection(id);
+  }
 }

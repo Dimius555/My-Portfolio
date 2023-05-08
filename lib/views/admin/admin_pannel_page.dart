@@ -46,11 +46,11 @@ class _AdminPannelPageState extends State<AdminPannelPage> {
             children: const [
               Expanded(
                 flex: 1,
-                child: AdminMenuWidget(),
+                child: SizedBox(child: AdminMenuWidget()),
               ),
               SizedBox(width: 20),
               Expanded(
-                flex: 4,
+                flex: 5,
                 child: SkillsView(),
               )
             ],

@@ -39,4 +39,14 @@ class SkillsAPI {
       rethrow;
     }
   }
+
+  Future<void> removeSection(String id) async {
+    try {
+      await _firestore.collection('skills').doc(id).delete();
+      log('✅ Skill section deleted. ');
+    } catch (e) {
+      log('🔥 Error fetching or parsing skill section: $e');
+      rethrow;
+    }
+  }
 }

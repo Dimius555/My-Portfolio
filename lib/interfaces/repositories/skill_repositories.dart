@@ -4,4 +4,5 @@ abstract class SkillRepository {
   Future<void> createSkillSection(SkillSectionModel section);
   Future<SkillSectionModel> fetchSkillSectionById(String id);
   Future<List<SkillSectionModel>> fetchAllSkillSections();
+  Future<void> removeSection(String id);
 }

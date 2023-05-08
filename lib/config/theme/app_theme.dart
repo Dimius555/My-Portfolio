@@ -18,6 +18,7 @@ class AppTheme {
       elevatedButtonTheme: LightModeComponents.evelvatedButtonTheme(),
       textButtonTheme: LightModeComponents.textButtonThemeData(),
       appBarTheme: LightModeComponents.appBarTheme(),
+      sliderTheme: LightModeComponents.sliderThemeData(),
       inputDecorationTheme: LightModeComponents.textFieldTheme());
 
   static ThemeData darkTheme() => ThemeData(
@@ -29,6 +30,7 @@ class AppTheme {
       elevatedButtonTheme: DarkModeComponents.evelvatedButtonTheme(),
       textButtonTheme: DarkModeComponents.textButtonThemeData(),
       appBarTheme: DarkModeComponents.appBarTheme(),
+      sliderTheme: DarkModeComponents.sliderThemeData(),
       inputDecorationTheme: LightModeComponents.textFieldTheme());
 
   static AppTheme read(BuildContext context) {

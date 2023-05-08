@@ -1,7 +1,12 @@
 part of '../skills_page.dart';
 
 class _SkillsSectionComponent extends StatelessWidget {
-  const _SkillsSectionComponent({required this.skills, required this.title, required this.tooltip, this.isOnlyMobile = false});
+  const _SkillsSectionComponent({
+    required this.skills,
+    required this.title,
+    required this.tooltip,
+    this.isOnlyMobile = false,
+  });
 
   final String title;
   final String tooltip;

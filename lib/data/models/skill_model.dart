@@ -11,6 +11,15 @@ class SkillModel {
     this.info,
   });
 
+  SkillModel copyWith({String? name, double? level, String? info}) {
+    return SkillModel(
+      id: id,
+      name: name ?? this.name,
+      level: level ?? this.level,
+      info: info ?? this.info,
+    );
+  }
+
   static SkillModel fromJson(Map<String, dynamic> json) {
     return SkillModel(
       id: json['id'],

@@ -1,6 +1,8 @@
 part of 'app_theme.dart';
 
 class LightModeComponents {
+  static SliderThemeData sliderThemeData() => SliderThemeData(overlayShape: SliderComponentShape.noOverlay);
+
   static ElevatedButtonThemeData evelvatedButtonTheme() => ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             backgroundColor: LightModeColors.appPrimaryColor,
@@ -55,6 +57,8 @@ class LightModeComponents {
 }
 
 class DarkModeComponents {
+  static SliderThemeData sliderThemeData() => SliderThemeData(overlayShape: SliderComponentShape.noOverlay);
+
   static ElevatedButtonThemeData evelvatedButtonTheme() => ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             backgroundColor: LightModeColors.appPrimaryColor,
