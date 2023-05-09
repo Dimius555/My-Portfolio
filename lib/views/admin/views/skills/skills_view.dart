@@ -13,7 +13,7 @@ import 'package:portfolio/views/widgets/custom/custom_button.dart';
 part 'components/add_button.dart';
 part 'components/options_selection_widget.dart';
 part 'components/create_new_skill_section_widget.dart';
-part 'components/add_skill_options_dialog.dart';
+part 'dialogs/add_skill_options_dialog.dart';
 part 'components/skill_component.dart';
 
 class SkillsView extends StatefulWidget {
@@ -34,48 +34,50 @@ class _SkillsViewState extends State<SkillsView> {
   Widget build(BuildContext context) {
     final theme = AppTheme.read(context);
     final skillsState = SkillsCubit.watchState(context);
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 64,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Skills',
-                  style: theme.regular0,
-                ),
-                _AddButton(
-                  theme: theme,
-                  onPressed: () {
-                    showCupertinoModalPopup(
-                        context: context,
-                        builder: (cntxt) {
-                          return _AddSkillOptionsDialog(theme: theme);
-                        });
-                  },
-                ),
-              ],
-            ),
-          ),
-          if (skillsState.skillSections.isNotEmpty)
-            Column(
-              children: _fetchSections(skillsState.skillSections, theme),
-            ),
-          if (skillsState.skillSections.isEmpty)
-            Padding(
-              padding: const EdgeInsets.all(64.0),
-              child: Text(
-                'There is no skill here yet',
-                style: theme.regular2,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 64,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Skills',
+                    style: theme.regular0,
+                  ),
+                  _AddButton(
+                    theme: theme,
+                    onPressed: () {
+                      showCupertinoModalPopup(
+                          context: context,
+                          builder: (cntxt) {
+                            return _AddSkillOptionsDialog(theme: theme);
+                          });
+                    },
+                  ),
+                ],
               ),
-            )
-        ],
+            ),
+            if (skillsState.skillSections.isNotEmpty)
+              Column(
+                children: _fetchSections(skillsState.skillSections, theme),
+              ),
+            if (skillsState.skillSections.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(64.0),
+                child: Text(
+                  'There is no skill here yet',
+                  style: theme.regular2,
+                ),
+              )
+          ],
+        ),
       ),
     );
   }

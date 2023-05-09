@@ -16,13 +16,14 @@ class _AddSkillOptionsDialogState extends State<_AddSkillOptionsDialog> with Sin
 
   @override
   void initState() {
-    _displayedWidget = _OptionsSelectionWidget(
-      onSelected: (bool showCreateSection) {
-        setState(() {
-          _displayedWidget = const _CreateNewSkillSectionWidget();
-        });
-      },
-    );
+    _displayedWidget = const _CreateNewSkillSectionWidget();
+    // _OptionsSelectionWidget(
+    //   onSelected: (bool showCreateSection) {
+    //     setState(() {
+    //       _displayedWidget = const _CreateNewSkillSectionWidget();
+    //     });
+    //   },
+    // );
     super.initState();
   }
 
